@@ -1,26 +1,91 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --md-cream: #f7f3ec;
+  --md-sand: #e8dfd2;
+  --md-sage: #6b7f6a;
+  --md-sage-dark: #4a5c49;
+  --md-terracotta: #b86b52;
+  --md-terracotta-dark: #944b38;
+  --md-ink: #1f1f1f;
+  --md-muted: #5c574f;
+  --md-card: #ffffff;
+  --md-ring: color-mix(in oklab, var(--md-terracotta) 35%, white);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-md-cream: var(--md-cream);
+  --color-md-sand: var(--md-sand);
+  --color-md-sage: var(--md-sage);
+  --color-md-sage-dark: var(--md-sage-dark);
+  --color-md-terracotta: var(--md-terracotta);
+  --color-md-terracotta-dark: var(--md-terracotta-dark);
+  --color-md-ink: var(--md-ink);
+  --color-md-muted: var(--md-muted);
+  --color-md-card: var(--md-card);
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--md-cream);
+  color: var(--md-ink);
+  font-family: var(--font-sans);
+}
+
+.md-container {
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+}
+
+.md-prose {
+  @apply text-md-muted max-w-3xl space-y-4 leading-relaxed;
+}
+
+.md-prose h2 {
+  @apply text-md-ink font-display mt-10 text-2xl font-semibold tracking-tight;
+}
+
+.md-prose h3 {
+  @apply text-md-ink mt-6 text-lg font-semibold;
+}
+
+.md-btn-primary {
+  @apply bg-md-terracotta hover:bg-md-terracotta-dark inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition;
+}
+
+.md-btn-outline {
+  @apply border-md-sage/40 text-md-sage-dark hover:border-md-terracotta hover:text-md-terracotta-dark inline-flex items-center justify-center gap-2 rounded-full border bg-white/80 px-5 py-2.5 text-sm font-semibold transition;
+}
+
+.md-marquee {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}
+
+.md-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: md-marquee 40s linear infinite;
+}
+
+.md-marquee:hover .md-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes md-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
