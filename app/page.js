@@ -79,7 +79,7 @@ export default function HomePage() {
           <div className="relative">
             <div className="border-md-sand bg-md-card relative aspect-[4/3] overflow-hidden rounded-3xl border shadow-lg">
               <Image
-                src="/istanbul-metropol-dekorasyon.jpg"
+                src="/istanbul-gergi-tavan-uygulamasi.jpeg"
                 alt="Metropol Dekorasyon İstanbul iç mekan uygulaması"
                 fill
                 priority

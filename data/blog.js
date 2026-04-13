@@ -6,7 +6,7 @@ export const blogPosts = [
       "Pürüzsüz sonuç için zımpara, astar ve çatlak onarımı adımları; İstanbul ikliminde doğru kuruma süreleri.",
     excerpt:
       "Boya öncesi hazırlık yapılmadan yapılan işler kısa sürede sorun çıkarır. İstanbul’daki daire ve ofisler için pratik kontrol listesi.",
-    coverImage: "/istanbul-metropol-dekorasyon.jpg",
+    coverImage: "/blog/istanbul-ic-cephe-yuzey-hazirlik.jpg",
     coverAlt: "Metropol Dekorasyon iç cephe boya hazırlığı",
     publishedAt: "2026-03-02",
     body: [
@@ -22,7 +22,7 @@ export const blogPosts = [
       "Profil yüksekliği, köşe birleşimleri ve boya uyumu; duvar çıtası maliyetini etkileyen faktörler.",
     excerpt:
       "Salon ve yatak odasında duvar çıtası ile karakter kazandırmak için doğru profil ve montaj sırası.",
-    coverImage: "/istanbul-metropol-dekorasyon.jpg",
+    coverImage: "/blog/istanbul-duvar-cita-modelleri.avif",
     coverAlt: "İstanbul duvar çıtası dekorasyon",
     publishedAt: "2026-03-10",
     body: [
@@ -38,7 +38,7 @@ export const blogPosts = [
       "İstanbul ofis ve mağazalarında gergi tavan ile homojen ışık; profil seçimi ve enerji verimliliği.",
     excerpt:
       "Gergi tavanın düz görünümünü bozmadan LED entegrasyonu için dikkat edilmesi gerekenler.",
-    coverImage: "/istanbul-metropol-dekorasyon.jpg",
+    coverImage: "/blog/istanbul-led-tavan-aydinlatma.jpg",
     coverAlt: "Gergi tavan ve aydınlatma",
     publishedAt: "2026-03-18",
     body: [
@@ -54,7 +54,7 @@ export const blogPosts = [
       "Ofis bölme ve ev içi oda ayırma projelerinde taşyünü, alçıpan kalınlığı ve detay çözümleri.",
     excerpt:
       "İstanbul’da sık görülen ince bölme duvarlarda ses geçişini azaltmak için uygulanabilir önlemler.",
-    coverImage: "/istanbul-metropol-dekorasyon.jpg",
+    coverImage: "/blog/istanbul-alcipan-izolasyon-malzemesi.webp",
     coverAlt: "Alçıpan bölme duvar uygulaması",
     publishedAt: "2026-03-22",
     body: [
@@ -70,7 +70,7 @@ export const blogPosts = [
       "Işık yönü, kat yüksekliği ve mobilya uyumu; sıcak-soğuk tonlar ve küçük mekân algısı.",
     excerpt:
       "Kuzey-güney cephe farkı ve İstanbul’daki günlük ışıkla renk kartelasını test etmenin yolları.",
-    coverImage: "/istanbul-metropol-dekorasyon.jpg",
+    coverImage: "/blog/istanbul-daire-renk-secimi.jpg",
     coverAlt: "İstanbul iç mekan boya renk seçimi",
     publishedAt: "2026-04-01",
     body: [
