@@ -4,6 +4,7 @@ import PartnersMarquee from "../components/PartnersMarquee";
 import JsonLd from "../components/JsonLd";
 import { business, siteUrl } from "../lib/site";
 import { faqs } from "../lib/faqs";
+import { getGalleryPreview } from "../lib/gallery";
 import { hizmetler } from "../lib/hizmetler";
 import { ogShareDescription, ogShareTitle } from "../lib/shareMeta";
 
@@ -39,6 +40,7 @@ export default function HomePage() {
     description: business.description,
     publisher: { "@type": "Organization", name: business.name },
   };
+  const galleryPreview = getGalleryPreview(6);
 
   return (
     <>
@@ -143,6 +145,68 @@ export default function HomePage() {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      <section className="md-container pb-2 pt-4 sm:py-10">
+        <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div className="max-w-2xl">
+            <h2 className="font-display text-md-ink text-2xl font-semibold tracking-tight sm:text-3xl">
+              Örnek işlerimiz
+            </h2>
+            <p className="text-md-muted mt-2 text-sm sm:text-base">
+              Gerçek uygulamalardan seçtiğimiz fotoğraf ve videolar. Tümünü görmek için galeriye
+              geçebilirsiniz.
+            </p>
+          </div>
+          <Link href="/galeri" className="md-btn-outline shrink-0 self-start sm:self-auto">
+            Galeriyi aç
+          </Link>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {galleryPreview.map((item) => (
+            <Link
+              key={item.src}
+              href="/galeri"
+              className="border-md-sand bg-md-card group relative overflow-hidden rounded-2xl border shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+              aria-label={`Galeri: ${item.alt}`}
+            >
+              <div className="relative aspect-[4/3]">
+                {item.type === "video" ? (
+                  <>
+                    <video
+                      src={item.src}
+                      preload="metadata"
+                      muted
+                      playsInline
+                      className="h-full w-full object-cover"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="inline-flex items-center gap-2 rounded-full bg-black/55 px-4 py-2 text-xs font-semibold text-white backdrop-blur">
+                        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/10">
+                          <span className="text-base leading-none">▶</span>
+                        </span>
+                        Video
+                      </span>
+                    </div>
+                  </>
+                ) : (
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    loading="lazy"
+                    sizes="(min-width: 1024px) 33vw, 100vw"
+                    className="object-cover transition duration-500 group-hover:scale-[1.02]"
+                  />
+                )}
+              </div>
+              <div className="p-4">
+                <p className="text-md-muted text-sm leading-relaxed sm:text-base">{item.alt}</p>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 

@@ -8,6 +8,7 @@ const staticPaths = [
   "/hakkimizda",
   "/iletisim",
   "/hizmetler",
+  "/galeri",
   "/blog",
   "/sss",
   "/gizlilik-politikasi",
